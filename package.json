@@ -1,0 +1,22 @@
+{
+  "name": "openaibot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Tommi Haapa",
+  "license": "ISC",
+  "dependencies": {
+    "@5x/enumjs": "^1.0.6",
+    "@slack/bolt": "^3.12.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "log4js": "^6.9.1",
+    "node-cache": "^5.1.2",
+    "openai": "^3.2.1",
+    "request": "^2.88.2"
+  }
+}
