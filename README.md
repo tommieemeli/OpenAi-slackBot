@@ -1,4 +1,4 @@
-6. Obtain the following keys and add them to a `.env` file at the root of the project directory:
+Obtain the following keys and add them to a `.env` file at the root of the project directory:
 
 - `SLACK_SIGNING_SECRET`: found under `Basic Information > App Credentials > Signing Secret`
 - `SLACK_BOT_TOKEN`: found under `OAuth & Permissions > Bot User OAuth Token`
