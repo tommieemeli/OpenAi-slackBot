@@ -1,3 +1,5 @@
+Some documentation about creating slack bot you can find [here](https://medium.com/@alexandre.tkint/integrate-openais-chatgpt-within-slack-a-step-by-step-approach-bea43400d311)
+
 Obtain the following keys and add them to a `.env` file at the root of the project directory:
 
 - `SLACK_SIGNING_SECRET`: found under `Basic Information > App Credentials > Signing Secret`
