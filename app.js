@@ -100,11 +100,14 @@ app.command("/gen_image", async ({ command, ack, say }) => {
   }
 });
 
+const PORT = process.env.PORT || 3000;
+
 (async () => {
   // Start your app
-  await app.start();
+  await app.start(PORT);
 
   logger.log("⚡️ SLackbot app is running!");
   logger.log("log level: ", logger.level);
-  logger.log("Port ", process.env.PORT);
+  logger.log("Port ", PORT);
+  
 })();
