@@ -20,6 +20,7 @@ const app = new App({
   // you still need to listen on some port!
   port: process.env.PORT || 3000,
 });
+
 const openAICommand = new OpenAICommand(openAIApi, cache, config.openAI);
 
 app.event("app_mention", async ({ event, say }) => {
@@ -100,14 +101,10 @@ app.command("/gen_image", async ({ command, ack, say }) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
-
 (async () => {
   // Start your app
-  await app.start(PORT);
+  await app.start();
 
   logger.log("⚡️ SLackbot app is running!");
-  logger.log("log level: ", logger.level);
-  logger.log("Port ", PORT);
-  
+  logger.log("log level: ", logger.level);  
 })();
