@@ -11,6 +11,8 @@ const { cache, openAIApi } = require("./openai/configuration");
 const OpenAICommand = require("./openai/OpenAICommands");
 const logger = require("./logger").getLogger("app");
 
+const PORT = process.env.PORT || 3000;
+
 const app = new App({
   token: config.slack.botToken,
   signingSecret: config.slack.signingSecret,
@@ -18,7 +20,7 @@ const app = new App({
   appToken: config.slack.appToken,
   // Socket Mode doesn't listen on a port, but in case you want your app to respond to OAuth,
   // you still need to listen on some port!
-  port: process.env.PORT || 3000,
+  port: PORT,
 });
 
 const openAICommand = new OpenAICommand(openAIApi, cache, config.openAI);
@@ -103,8 +105,9 @@ app.command("/gen_image", async ({ command, ack, say }) => {
 
 (async () => {
   // Start your app
-  await app.start();
+  await app.start(PORT);
 
   logger.log("⚡️ SLackbot app is running!");
-  logger.log("log level: ", logger.level);  
+  logger.log("log level: ", logger.level);
+  logger.log(PORT !== undefined ? "We were able to bind port" : "Hmm port is missing..")  
 })();
