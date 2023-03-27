@@ -107,7 +107,7 @@ app.command("/gen_image", async ({ command, ack, say }) => {
   // Start your app
   await app.start(PORT);
 
-  logger.log("⚡️ SLackbot app is running!");
-  logger.log("log level: ", logger.level);
-  logger.log(PORT !== undefined ? "We were able to bind port" : "Hmm port is missing..")  
+  logger.log(" ⚡️ SLackbot app is running!");
+  logger.log(" log level: ", logger.level);
+  logger.log(PORT !== undefined ? ` We were able to bind port ${PORT}` : "Hmm port is missing..")  
 })();
