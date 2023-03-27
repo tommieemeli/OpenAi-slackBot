@@ -18,7 +18,7 @@ const app = new App({
   appToken: config.slack.appToken,
   // Socket Mode doesn't listen on a port, but in case you want your app to respond to OAuth,
   // you still need to listen on some port!
-  port: config.port,
+  port: process.env.PORT || 3000,
 });
 const openAICommand = new OpenAICommand(openAIApi, cache, config.openAI);
 
@@ -106,4 +106,5 @@ app.command("/gen_image", async ({ command, ack, say }) => {
 
   logger.log("⚡️ SLackbot app is running!");
   logger.log("log level: ", logger.level);
+  logger.log("Port ", process.env.PORT);
 })();

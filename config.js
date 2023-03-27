@@ -9,7 +9,7 @@ const getInt = (key, defaultValue) => {
 };
 
 module.exports = {
-  port: getInt("PORT", 3000),
+  port: process.env.PORT || 3000,
   slack: {
     botToken: process.env.SLACK_BOT_TOKEN,
     signingSecret: process.env.SLACK_SIGNING_SECRET,
