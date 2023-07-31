@@ -9,7 +9,7 @@ class OpenAICommand {
   }
 
   async createCompletion(prompt, options) {
-    const completion = await this.openAIApi.createCompletion({
+    const completion = await this.openAIApi.createChatCompletion({
       model: "gpt-4",
       prompt: prompt,
       temperature: 0.7,
@@ -72,7 +72,7 @@ class OpenAICommand {
 
   async createChatCompletion(messages, options) {
     const completion = await this.openAIApi.createChatCompletion({
-      model: "gpt-3.5-turbo",
+      model: "gpt-4",
       messages,
       ...options,
     });
