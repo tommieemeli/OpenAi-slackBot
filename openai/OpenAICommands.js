@@ -9,7 +9,7 @@ class OpenAICommand {
   }
 
   async createCompletion(prompt, options) {
-    const completion = await this.openAIApi.createChatCompletion({
+    const completion = await this.openAIApi.createCompletion({
       model: "gpt-4",
       prompt: prompt,
       temperature: 0.7,
