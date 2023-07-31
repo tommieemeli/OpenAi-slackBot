@@ -68,6 +68,8 @@ app.message(async ({ event, say }) => {
     logger.debug("message completed");
   } catch (error) {
     logger.error(error);
+
+    await say({text: "Hmm jotakin on selvästi pielessä..", thread_ts: event.ts})
   }
 });
 

@@ -10,7 +10,7 @@ class OpenAICommand {
 
   async createCompletion(prompt, options) {
     const completion = await this.openAIApi.createCompletion({
-      model: "text-davinci-003",
+      model: "gpt-4",
       prompt: prompt,
       temperature: 0.7,
       max_tokens: 1000,
