@@ -72,7 +72,7 @@ class OpenAICommand {
 
   async createChatCompletion(messages, options) {
     const completion = await this.openAIApi.createChatCompletion({
-      model: "gpt-4",
+      model: "gpt-3.5-turbo",
       messages,
       ...options,
     });
