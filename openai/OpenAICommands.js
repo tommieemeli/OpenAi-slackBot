@@ -82,10 +82,12 @@ class OpenAICommand {
 
   async generateImage(prompt) {
     const res = await this.openAIApi.createImage({
+      model: "dall-e-3",
       prompt: prompt,
       n: 1,
-      size: "512x512",
+      size: "1024x1024",
       response_format: "b64_json",
+      style: "vivid"
     });
 
     return res.data.data[0].b64_json;
